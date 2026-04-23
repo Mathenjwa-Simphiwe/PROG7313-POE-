@@ -1,36 +1,126 @@
-namespace PROGPOE
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi;
+using PROGPOE.Data;
+using PROGPOE.Models;
+using PROGPOE.Services;
+using System.Text;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// DATABASE WITH FALLBACK
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var useInMemory = builder.Configuration.GetValue<bool>("UseInMemoryDatabase") || string.IsNullOrEmpty(connectionString);
+
+if (useInMemory)
 {
-    public class Program
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseInMemoryDatabase("GLMS_DB"));
+    Console.WriteLine("USING IN-MEMORY DATABASE");
+}
+else
+{
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlServer(connectionString));
+    Console.WriteLine("USING SQL SERVER DATABASE");
+}
+
+// IDENTITY
+builder.Services.AddIdentity<Client, IdentityRole>(options =>
+{
+    options.Password.RequireDigit = true;
+    options.Password.RequiredLength = 6;
+    options.Password.RequireNonAlphanumeric = false;
+})
+.AddEntityFrameworkStores<AppDbContext>()
+.AddDefaultTokenProviders();
+
+builder.Services.AddIdentityCore<Admin>()
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
+
+// JWT
+var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!);
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
     {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(key)
+    };
+});
 
-            // Add services to the container.
-            builder.Services.AddControllersWithViews();
+// SERVICES
+builder.Services.AddScoped<CurrencyConverter>();
+builder.Services.AddScoped<Billing>();
+builder.Services.AddScoped<EmailObserver>();
+builder.Services.AddScoped<FileStorageService>();
+builder.Services.AddScoped<ContractService>();
 
-            var app = builder.Build();
+// MVC + API + Swagger
+builder.Services.AddControllersWithViews();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
-            // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+var app = builder.Build();
 
-            app.UseHttpsRedirection();
-            app.UseRouting();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
-            app.UseAuthorization();
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
 
-            app.MapStaticAssets();
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}")
-                .WithStaticAssets();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
-            app.Run();
-        }
+// SEED DATABASE
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    var rm = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var am = scope.ServiceProvider.GetRequiredService<UserManager<Admin>>();
+    var cm = scope.ServiceProvider.GetRequiredService<UserManager<Client>>();
+
+    await db.Database.EnsureCreatedAsync();
+
+    if (!await rm.RoleExistsAsync("Admin"))
+        await rm.CreateAsync(new IdentityRole("Admin"));
+    if (!await rm.RoleExistsAsync("Client"))
+        await rm.CreateAsync(new IdentityRole("Client"));
+
+    if (await am.FindByEmailAsync("admin@glms.com") == null)
+    {
+        var admin = new Admin { UserName = "admin@glms.com", Email = "admin@glms.com", FullName = "System Admin", Department = "IT" };
+        await am.CreateAsync(admin, "Admin@123");
+        await am.AddToRoleAsync(admin, "Admin");
+    }
+
+    if (await cm.FindByEmailAsync("client@test.com") == null)
+    {
+        var client = new Client { UserName = "client@test.com", Email = "client@test.com", FullName = "Test Client", Region = "North America" };
+        await cm.CreateAsync(client, "Client@123");
+        await cm.AddToRoleAsync(client, "Client");
     }
 }
+
+app.Run();
