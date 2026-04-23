@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "_Layout";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="fas fa-sign-in-alt me-2"></i>GLMS Login</h4>
+            </div>
+            <div class="card-body">
+                <div id="errorMessage" class="alert alert-danger d-none"></div>
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label class="form-label"><i class="fas fa-envelope me-1"></i>Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><i class="fas fa-lock me-1"></i>Password</label>
+                        <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" id="loginBtn">
+                        <i class="fas fa-sign-in-alt me-2"></i>Login
+                    </button>
+                </form>
+                <hr>
+                <div class="text-center">
+                    <small class="text-muted">
+                        <strong>Admin:</strong> admin@glms.com / Admin@123<br>
+                        <strong>Client:</strong> client@test.com / Client@123
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('errorMessage');
+            const loginBtn = document.getElementById('loginBtn');
+            
+            loginBtn.disabled = true;
+            loginBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Logging in...';
+            errorDiv.classList.add('d-none');
+            
+            try {
+                // FIXED: Use /api/account/login (lowercase)
+                const response = await fetch('/api/account/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('role', data.role);
+                    localStorage.setItem('fullName', data.fullName);
+                    
+                    // Redirect based on role
+                    if (data.role === 'Admin') {
+                        window.location.href = '/Admin/Dashboard';
+                    } else {
+                        window.location.href = '/Client/Dashboard';
+                    }
+                } else {
+                    const error = await response.json();
+                    errorDiv.classList.remove('d-none');
+                    errorDiv.textContent = error.message || 'Invalid email or password';
+                }
+            } catch (err) {
+                errorDiv.classList.remove('d-none');
+                errorDiv.textContent = 'Connection error. Please check if the API is running.';
+                console.error('Login error:', err);
+            } finally {
+                loginBtn.disabled = false;
+                loginBtn.innerHTML = '<i class="fas fa-sign-in-alt me-2"></i>Login';
+            }
+        });
+        
+        // Redirect if already logged in
+        if (token && role) {
+            if (role === 'Admin') {
+                window.location.href = '/Admin/Dashboard';
+            } else {
+                window.location.href = '/Client/Dashboard';
+            }
+        }
+    </script>
+}

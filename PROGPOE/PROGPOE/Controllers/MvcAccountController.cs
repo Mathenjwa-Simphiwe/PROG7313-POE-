@@ -2,9 +2,11 @@
 
 namespace PROGPOE.Controllers
 {
-    public class MvcAccountController : Controller
+    public class AccountController : Controller
     {
-        public IActionResult Index()
+        [HttpGet]
+        [Route("Account/Login")]
+        public IActionResult Login()
         {
             return View();
         }

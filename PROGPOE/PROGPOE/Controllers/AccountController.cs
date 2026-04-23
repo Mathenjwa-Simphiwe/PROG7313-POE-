@@ -9,12 +9,12 @@ using PROGPOE.Models;
 namespace PROGPOE.Controllers
 {
     [ApiController, Route("api/[controller]")]
-    public class AccountController : ControllerBase
+    public class ApiAccountController : ControllerBase
     {
         private readonly UserManager<Client> _cm;
         private readonly UserManager<Admin> _am;
         private readonly IConfiguration _cfg;
-        public AccountController(UserManager<Client> cm, UserManager<Admin> am, IConfiguration cfg) { _cm = cm; _am = am; _cfg = cfg; }
+        public ApiAccountController(UserManager<Client> cm, UserManager<Admin> am, IConfiguration cfg) { _cm = cm; _am = am; _cfg = cfg; }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto d)

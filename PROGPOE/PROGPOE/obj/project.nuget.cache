@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Zd5k5o09DBk=",
+  "dgSpecHash": "6Y59fD1Qk1M=",
   "success": true,
-  "projectFilePath": "C:\\Users\\lab_services_student\\Downloads\\PROGPOE\\PROGPOE\\PROGPOE.csproj",
+  "projectFilePath": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\PROGPOE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lab_services_student\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\10.0.7\\microsoft.aspnetcore.identity.entityframeworkcore.10.0.7.nupkg.sha512",
     "C:\\Users\\lab_services_student\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.7\\microsoft.entityframeworkcore.10.0.7.nupkg.sha512",

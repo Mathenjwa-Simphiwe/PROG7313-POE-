@@ -1,21 +1,5 @@
 [
   {
-    "ContainingType": "PROGPOE.Controllers.AccountController",
-    "Method": "Login",
-    "RelativePath": "api/Account/login",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "d",
-        "Type": "PROGPOE.Controllers.LoginDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "PROGPOE.Controllers.ApiAdminController",
     "Method": "GetContracts",
     "RelativePath": "api/admin/contracts",
@@ -192,6 +176,22 @@
       {
         "Name": "request",
         "Type": "PROGPOE.Controllers.DecisionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PROGPOE.Controllers.ApiAccountController",
+    "Method": "Login",
+    "RelativePath": "api/ApiAccount/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "d",
+        "Type": "PROGPOE.Controllers.LoginDto",
         "IsRequired": true
       }
     ],

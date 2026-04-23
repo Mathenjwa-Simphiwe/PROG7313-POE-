@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "_Layout";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-tachometer-alt me-2"></i>Admin Dashboard</h2>
+</div>
+
+<div class="row" id="statsRow">
+    <div class="col-12 text-center py-4">
+        <div class="spinner-border text-primary"></div>
+        <p class="mt-2">Loading dashboard...</p>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        async function loadDashboard() {
+            try {
+                const response = await apiFetch('/api/Admin/dashboard');
+                const data = await response.json();
+                
+                document.getElementById('statsRow').innerHTML = `
+                    <div class="col-md-3 mb-3">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body">
+                                <h6>Total Contracts</h6>
+                                <h2>${data.totalContracts}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <h6>Active Contracts</h6>
+                                <h2>${data.activeContracts}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body">
+                                <h6>Pending Requests</h6>
+                                <h2>${data.pendingRequests}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card bg-info text-white">
+                            <div class="card-body">
+                                <h6>Total Clients</h6>
+                                <h2>${data.totalClients}</h2>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } catch (err) {
+                document.getElementById('statsRow').innerHTML = '<div class="alert alert-danger">Failed to load dashboard</div>';
+            }
+        }
+        
+        loadDashboard();
+    </script>
+}
