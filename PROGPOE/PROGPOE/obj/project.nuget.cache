@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "Zd5k5o09DBk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lab_services_student\\Downloads\\PROGPOE\\PROGPOE\\PROGPOE.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\10.0.7\\microsoft.aspnetcore.identity.entityframeworkcore.10.0.7.nupkg.sha512",
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.7\\microsoft.entityframeworkcore.10.0.7.nupkg.sha512",
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.7\\microsoft.entityframeworkcore.abstractions.10.0.7.nupkg.sha512",
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.7\\microsoft.entityframeworkcore.analyzers.10.0.7.nupkg.sha512",
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\10.0.7\\microsoft.entityframeworkcore.relational.10.0.7.nupkg.sha512",
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.17.0\\microsoft.identitymodel.abstractions.8.17.0.nupkg.sha512",
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.17.0\\microsoft.identitymodel.jsonwebtokens.8.17.0.nupkg.sha512",
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\microsoft.identitymodel.logging\\8.17.0\\microsoft.identitymodel.logging.8.17.0.nupkg.sha512",
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.17.0\\microsoft.identitymodel.tokens.8.17.0.nupkg.sha512",
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.17.0\\system.identitymodel.tokens.jwt.8.17.0.nupkg.sha512"
+  ],
+  "logs": []
+}

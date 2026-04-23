@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Tests\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Client\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.7" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.17.0" />
+  </ItemGroup>
+
+</Project>
