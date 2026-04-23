@@ -8,7 +8,7 @@ using PROGPOE.Models;
 
 namespace PROGPOE.Controllers
 {
-    [ApiController, Route("api/[controller]")]
+    [ApiController, Route("api/account")]
     public class ApiAccountController : ControllerBase
     {
         private readonly UserManager<Client> _cm;

@@ -10,6 +10,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PROGPOE.Controllers.ApiAccountController",
+    "Method": "Login",
+    "RelativePath": "api/account/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "d",
+        "Type": "PROGPOE.Controllers.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PROGPOE.Controllers.ApiAdminController",
     "Method": "GetContracts",
     "RelativePath": "api/admin/contracts",
@@ -192,25 +208,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PROGPOE.Controllers.ApiAccountController",
-    "Method": "Login",
-    "RelativePath": "api/ApiAccount/login",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "d",
-        "Type": "PROGPOE.Controllers.LoginDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PROGPOE.Controllers.ClientController",
+    "ContainingType": "PROGPOE.Controllers.ApiClientController",
     "Method": "Contracts",
-    "RelativePath": "api/Client/contracts",
+    "RelativePath": "api/client/contracts",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -218,9 +218,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PROGPOE.Controllers.ClientController",
+    "ContainingType": "PROGPOE.Controllers.ApiClientController",
     "Method": "Sign",
-    "RelativePath": "api/Client/contracts/{id}/sign",
+    "RelativePath": "api/client/contracts/{id}/sign",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -234,9 +234,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PROGPOE.Controllers.ClientController",
+    "ContainingType": "PROGPOE.Controllers.ApiClientController",
     "Method": "Dashboard",
-    "RelativePath": "api/Client/dashboard",
+    "RelativePath": "api/client/dashboard",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -244,9 +244,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PROGPOE.Controllers.ClientController",
+    "ContainingType": "PROGPOE.Controllers.ApiClientController",
     "Method": "CreateRequest",
-    "RelativePath": "api/Client/service-requests",
+    "RelativePath": "api/client/service-requests",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -260,9 +260,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PROGPOE.Controllers.ClientController",
+    "ContainingType": "PROGPOE.Controllers.ApiClientController",
     "Method": "Requests",
-    "RelativePath": "api/Client/service-requests",
+    "RelativePath": "api/client/service-requests",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

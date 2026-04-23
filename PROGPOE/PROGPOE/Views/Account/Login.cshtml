@@ -15,16 +15,15 @@
                 
                 <form id="loginForm">
                     <div class="mb-3">
-                        <label class="form-label">Email</label>
+                        <label>Email</label>
                         <input type="email" id="email" class="form-control" value="admin@glms.com" required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Password</label>
+                        <label>Password</label>
                         <input type="password" id="password" class="form-control" value="Admin@123" required>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                    <button type="submit" class="btn btn-primary w-100" id="loginBtn">Login</button>
                 </form>
-                
                 <hr>
                 <div class="text-center">
                     <small>Admin: admin@glms.com / Admin@123</small><br>
@@ -42,51 +41,52 @@
             
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
+            const loginBtn = document.getElementById('loginBtn');
             
-            console.log('Attempting login with:', email);
+            loginBtn.disabled = true;
+            loginBtn.innerHTML = 'Logging in...';
             
             try {
                 const response = await fetch('/api/account/login', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        email: email,
-                        password: password
-                    })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
                 });
                 
-                console.log('Response status:', response.status);
-                
-                const data = await response.json();
-                console.log('Response data:', data);
-                
                 if (response.ok) {
-                    // Save to localStorage
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('role', data.role);
-                    localStorage.setItem('fullName', data.fullName);
+                    const data = await response.json();
+                    
+                    // Store in localStorage
+                    localStorage.setItem('token', data.Token || data.token);
+                    localStorage.setItem('role', data.Role || data.role);
+                    localStorage.setItem('fullName', data.FullName || data.fullName);
+                    
+                    const role = data.Role || data.role;
                     
                     document.getElementById('successMessage').style.display = 'block';
                     document.getElementById('successMessage').textContent = 'Login successful! Redirecting...';
                     
-                    // Redirect after 1 second
+                    // Use direct location replacement instead of href
                     setTimeout(function() {
-                        if (data.role === 'Admin') {
-                            window.location.href = '/Admin/Dashboard';
+                        if (role === 'Admin') {
+                            window.location.replace('/Admin/Dashboard');
                         } else {
-                            window.location.href = '/Client/Dashboard';
+                            window.location.replace('/Client/Dashboard');
                         }
-                    }, 1000);
+                    }, 500);
+                    
                 } else {
                     document.getElementById('errorMessage').style.display = 'block';
-                    document.getElementById('errorMessage').textContent = data.message || 'Login failed';
+                    document.getElementById('errorMessage').textContent = 'Invalid email or password';
+                    loginBtn.disabled = false;
+                    loginBtn.innerHTML = 'Login';
                 }
             } catch (error) {
-                console.error('Fetch error:', error);
+                console.error('Login error:', error);
                 document.getElementById('errorMessage').style.display = 'block';
-                document.getElementById('errorMessage').textContent = 'Cannot connect to server. Check console.';
+                document.getElementById('errorMessage').textContent = 'Network error. Check if the API is running.';
+                loginBtn.disabled = false;
+                loginBtn.innerHTML = 'Login';
             }
         });
     </script>

@@ -110,86 +110,45 @@
 
 @section Scripts {
     <script>
-        async function loadContracts(filters = {}) {
-            const params = new URLSearchParams();
-            if (filters.startDate) params.append('startDate', filters.startDate);
-            if (filters.endDate) params.append('endDate', filters.endDate);
-            if (filters.status) params.append('status', filters.status);
-            
+        async function loadContracts() {
             try {
-                const response = await apiFetch(`/api/Admin/contracts?${params}`);
-                const contracts = await response.json();
+                const token = localStorage.getItem('token');
+                const baseUrl = window.location.origin;
                 
-                const statusColors = { 'Draft': 'secondary', 'Active': 'success', 'Expired': 'danger', 'OnHold': 'warning', 'Terminated': 'dark' };
-                
-                document.getElementById('contractsBody').innerHTML = contracts.map(c => `
-                    <tr>
-                        <td><strong>${c.contractNumber}</strong></td>
-                        <td>${c.clientName || 'N/A'}</td>
-                        <td>${new Date(c.startDate).toLocaleDateString()}</td>
-                        <td>${new Date(c.endDate).toLocaleDateString()}</td>
-                        <td><span class="badge bg-${statusColors[c.status] || 'secondary'}">${c.status}</span></td>
-                        <td>${c.serviceLevel}</td>
-                        <td>
-                            <div class="btn-group btn-group-sm">
-                                ${c.hasAgreement ? `<a href="/api/Admin/contracts/${c.contractId}/download" class="btn btn-outline-info"><i class="fas fa-download"></i></a>` : ''}
-                                <button class="btn btn-outline-warning" onclick="changeStatus(${c.contractId})"><i class="fas fa-edit"></i></button>
-                            </div>
-                        </td>
-                    </tr>
-                `).join('') || '<tr><td colspan="7" class="text-center py-4">No contracts found</td></tr>';
-            } catch (err) {
-                document.getElementById('contractsBody').innerHTML = '<tr><td colspan="7" class="text-center text-danger py-4">Failed to load contracts</td></tr>';
-            }
-        }
-        
-        document.getElementById('filterForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            loadContracts({
-                startDate: document.getElementById('startDate').value,
-                endDate: document.getElementById('endDate').value,
-                status: document.getElementById('status').value
-            });
-        });
-        
-        function showCreateModal() {
-            new bootstrap.Modal(document.getElementById('createModal')).show();
-        }
-        
-        document.getElementById('createForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData();
-            formData.append('ClientId', document.getElementById('clientId').value);
-            formData.append('StartDate', document.getElementById('cStartDate').value);
-            formData.append('EndDate', document.getElementById('cEndDate').value);
-            formData.append('ServiceLevel', document.getElementById('cServiceLevel').value);
-            
-            const fileInput = document.getElementById('cAgreement');
-            if (fileInput.files[0]) formData.append('Agreement', fileInput.files[0]);
-            
-            try {
-                const response = await fetch('/api/Admin/contracts', {
-                    method: 'POST',
-                    headers: { 'Authorization': `Bearer ${token}` },
-                    body: formData
+                const response = await fetch(baseUrl + '/api/client/contracts', {
+                    headers: {
+                        'Authorization': 'Bearer ' + token,
+                        'Content-Type': 'application/json'
+                    }
                 });
+                
                 if (response.ok) {
-                    bootstrap.Modal.getInstance(document.getElementById('createModal')).hide();
-                    loadContracts();
+                    const contracts = await response.json();
+                    
+                    if (contracts.length === 0) {
+                        document.getElementById('contractsRow').innerHTML =
+                            '<div class="col-12"><div class="alert alert-info">No contracts found</div></div>';
+                        return;
+                    }
+                    
+                    document.getElementById('contractsRow').innerHTML = contracts.map(c => `
+                        <div class="col-md-6 mb-3">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between">
+                                    <strong>${c.contractNumber}</strong>
+                                    <span class="badge bg-${c.status === 'Active' ? 'success' : 'secondary'}">${c.status}</span>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Start:</strong> ${new Date(c.startDate).toLocaleDateString()}</p>
+                                    <p><strong>End:</strong> ${new Date(c.endDate).toLocaleDateString()}</p>
+                                    <p><strong>Level:</strong> ${c.serviceLevel}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
                 }
             } catch (err) {
-                alert('Failed to create contract');
-            }
-        });
-        
-        async function changeStatus(id) {
-            const status = prompt('Enter new status (Draft=0, Active=1, Expired=2, OnHold=3):');
-            if (status) {
-                await apiFetch(`/api/Admin/contracts/${id}/status`, {
-                    method: 'PUT',
-                    body: JSON.stringify({ status: parseInt(status) })
-                });
-                loadContracts();
+                console.error('Error:', err);
             }
         }
         

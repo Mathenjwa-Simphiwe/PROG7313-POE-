@@ -54,80 +54,45 @@
     <script>
         async function loadContracts() {
             try {
-                const response = await apiFetch('/api/Client/contracts');
-                const contracts = await response.json();
+                const token = localStorage.getItem('token');
+                const baseUrl = window.location.origin;
                 
-                const statusColors = { 'Draft': 'secondary', 'Active': 'success', 'Expired': 'danger', 'OnHold': 'warning' };
+                const response = await fetch(baseUrl + '/api/client/contracts', {
+                    headers: {
+                        'Authorization': 'Bearer ' + token,
+                        'Content-Type': 'application/json'
+                    }
+                });
                 
-                document.getElementById('contractsRow').innerHTML = contracts.map(c => `
-                    <div class="col-md-6 mb-3">
-                        <div class="card">
-                            <div class="card-header d-flex justify-content-between">
-                                <strong>${c.contractNumber}</strong>
-                                <span class="badge bg-${statusColors[c.status] || 'secondary'}">${c.status}</span>
-                            </div>
-                            <div class="card-body">
-                                <p><strong>Start:</strong> ${new Date(c.startDate).toLocaleDateString()}</p>
-                                <p><strong>End:</strong> ${new Date(c.endDate).toLocaleDateString()}</p>
-                                <p><strong>Level:</strong> ${c.serviceLevel}</p>
-                                <button class="btn btn-primary btn-sm" onclick="showRequestModal(${c.contractId})">Create Request</button>
-                                ${c.status === 'Draft' ? `<button class="btn btn-success btn-sm" onclick="signContract(${c.contractId})">Sign Contract</button>` : ''}
+                if (response.ok) {
+                    const contracts = await response.json();
+                    
+                    if (contracts.length === 0) {
+                        document.getElementById('contractsRow').innerHTML =
+                            '<div class="col-12"><div class="alert alert-info">No contracts found</div></div>';
+                        return;
+                    }
+                    
+                    document.getElementById('contractsRow').innerHTML = contracts.map(c => `
+                        <div class="col-md-6 mb-3">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between">
+                                    <strong>${c.contractNumber}</strong>
+                                    <span class="badge bg-${c.status === 'Active' ? 'success' : 'secondary'}">${c.status}</span>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Start:</strong> ${new Date(c.startDate).toLocaleDateString()}</p>
+                                    <p><strong>End:</strong> ${new Date(c.endDate).toLocaleDateString()}</p>
+                                    <p><strong>Level:</strong> ${c.serviceLevel}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                `).join('') || '<div class="col-12"><div class="alert alert-info">No contracts found</div></div>';
-            } catch (err) {
-                document.getElementById('contractsRow').innerHTML = '<div class="alert alert-danger">Failed to load contracts</div>';
-            }
-        }
-        
-        async function signContract(id) {
-            await apiFetch(`/api/Client/contracts/${id}/sign`, { method: 'POST' });
-            loadContracts();
-        }
-        
-        function showRequestModal(contractId) {
-            document.getElementById('rContractId').value = contractId;
-            new bootstrap.Modal(document.getElementById('requestModal')).show();
-        }
-        
-        function toggleFields() {
-            const type = document.getElementById('rType').value;
-            document.getElementById('freightFields').style.display = type === '0' ? 'block' : 'none';
-            document.getElementById('maintenanceFields').style.display = type === '1' ? 'block' : 'none';
-        }
-        
-        document.getElementById('requestForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const type = parseInt(document.getElementById('rType').value);
-            const body = {
-                contractId: parseInt(document.getElementById('rContractId').value),
-                type: type,
-                origin: document.getElementById('rOrigin').value,
-                description: document.getElementById('rDescription').value
-            };
-            
-            if (type === 0) {
-                body.destination = document.getElementById('rDestination').value;
-                body.weightKg = parseFloat(document.getElementById('rWeightKg').value);
-            } else {
-                body.equipmentType = document.getElementById('rEquipmentType').value;
-                body.estimatedHours = parseInt(document.getElementById('rEstimatedHours').value);
-            }
-            
-            try {
-                const response = await apiFetch('/api/Client/service-requests', {
-                    method: 'POST',
-                    body: JSON.stringify(body)
-                });
-                if (response.ok) {
-                    bootstrap.Modal.getInstance(document.getElementById('requestModal')).hide();
-                    alert('Request created!');
+                    `).join('');
                 }
             } catch (err) {
-                alert('Failed to create request');
+                console.error('Error:', err);
             }
-        });
+        }
         
         loadContracts();
     </script>
