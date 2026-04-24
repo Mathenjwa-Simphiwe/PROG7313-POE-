@@ -1,27 +1,34 @@
-﻿@{
+@{
     ViewData["Title"] = "Manage Contracts";
     Layout = "_Layout";
 }
 
-<h2 class="mb-4"><i class="fas fa-file-contract me-2"></i>Contract Management</h2>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="fas fa-file-contract me-2"></i>Contract Management</h2>
+    <button class="btn btn-success" onclick="openCreateModal()">
+        <i class="fas fa-plus-circle me-2"></i>Create New Contract
+    </button>
+</div>
 
 <!-- Filter Card -->
 <div class="card mb-4">
-    <div class="card-header"><h5 class="mb-0"><i class="fas fa-filter me-2"></i>Filter Contracts</h5></div>
+    <div class="card-header">
+        <h5 class="mb-0"><i class="fas fa-filter me-2"></i>Filter Contracts</h5>
+    </div>
     <div class="card-body">
-        <form id="filterForm" class="row g-3">
+        <div class="row g-3">
             <div class="col-md-4">
                 <label class="form-label">Start Date</label>
-                <input type="date" id="startDate" class="form-control">
+                <input type="date" id="filterStart" class="form-control">
             </div>
             <div class="col-md-4">
                 <label class="form-label">End Date</label>
-                <input type="date" id="endDate" class="form-control">
+                <input type="date" id="filterEnd" class="form-control">
             </div>
             <div class="col-md-3">
                 <label class="form-label">Status</label>
-                <select id="status" class="form-select">
-                    <option value="">All</option>
+                <select id="filterStatus" class="form-select">
+                    <option value="">All Statuses</option>
                     <option value="0">Draft</option>
                     <option value="1">Active</option>
                     <option value="2">Expired</option>
@@ -29,129 +36,280 @@
                 </select>
             </div>
             <div class="col-md-1 d-flex align-items-end">
-                <button type="submit" class="btn btn-primary w-100"><i class="fas fa-search"></i></button>
+                <button class="btn btn-primary w-100" onclick="loadContracts()">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<!-- Create Contract Button -->
-<button class="btn btn-success mb-3" onclick="showCreateModal()">
-    <i class="fas fa-plus-circle me-2"></i>Create New Contract
-</button>
+<!-- Alert area -->
+<div id="alertArea"></div>
 
 <!-- Contracts Table -->
 <div class="card">
     <div class="card-body p-0">
         <div class="table-responsive">
             <table class="table table-hover mb-0">
-                <thead class="table-light">
+                <thead class="table-dark">
                     <tr>
                         <th>Contract #</th>
                         <th>Client</th>
-                        <th>Start</th>
-                        <th>End</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Service Level</th>
                         <th>Status</th>
-                        <th>Level</th>
+                        <th>Agreement</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="contractsBody">
-                    <tr><td colspan="7" class="text-center py-4">Loading...</td></tr>
+                    <tr>
+                        <td colspan="8" class="text-center py-4">
+                            <div class="spinner-border text-primary"></div>
+                            <p class="mt-2 mb-0">Loading contracts...</p>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 
-<!-- Create Contract Modal -->
-<div class="modal fade" id="createModal" tabindex="-1">
+<!-- CREATE CONTRACT MODAL -->
+<div class="modal fade" id="createModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title"><i class="fas fa-plus-circle me-2"></i>Create New Contract</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="createAlert"></div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Client <span class="text-danger">*</span></label>
+                    <select id="clientSelect" class="form-select" required>
+                        <option value="">Loading clients...</option>
+                    </select>
+                    <div class="form-text">Select the client this contract belongs to.</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Start Date <span class="text-danger">*</span></label>
+                        <input type="date" id="cStartDate" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">End Date <span class="text-danger">*</span></label>
+                        <input type="date" id="cEndDate" class="form-control" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Service Level <span class="text-danger">*</span></label>
+                    <select id="cServiceLevel" class="form-select" required>
+                        <option value="0">Standard</option>
+                        <option value="1">Premium</option>
+                        <option value="2">Enterprise</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Signed Agreement (PDF)</label>
+                    <input type="file" id="cAgreement" class="form-control" accept=".pdf">
+                    <div class="form-text">Optional — upload a signed PDF agreement.</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" id="createBtn" onclick="submitCreate()">
+                    <i class="fas fa-save me-2"></i>Create Contract
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CHANGE STATUS MODAL -->
+<div class="modal fade" id="statusModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Create Contract</h5>
+                <h5 class="modal-title"><i class="fas fa-exchange-alt me-2"></i>Change Contract Status</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <form id="createForm" enctype="multipart/form-data">
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label class="form-label">Client ID</label>
-                        <input type="text" id="clientId" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Start Date</label>
-                        <input type="date" id="cStartDate" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">End Date</label>
-                        <input type="date" id="cEndDate" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Service Level</label>
-                        <select id="cServiceLevel" class="form-select">
-                            <option value="0">Standard</option>
-                            <option value="1">Premium</option>
-                            <option value="2">Enterprise</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Agreement (PDF)</label>
-                        <input type="file" id="cAgreement" class="form-control" accept=".pdf">
-                    </div>
+            <div class="modal-body">
+                <p class="mb-3">Contract: <strong id="statusContractNumber"></strong></p>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">New Status</label>
+                    <select id="newStatus" class="form-select">
+                        <option value="0">Draft</option>
+                        <option value="1">Active</option>
+                        <option value="2">Expired</option>
+                        <option value="3">On Hold</option>
+                    </select>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Create</button>
-                </div>
-            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="submitStatusChange()">
+                    <i class="fas fa-check me-2"></i>Update Status
+                </button>
+            </div>
         </div>
     </div>
 </div>
 
 @section Scripts {
-    <script>
-        async function loadContracts() {
-            try {
-                const token = localStorage.getItem('token');
-                const baseUrl = window.location.origin;
-                
-                const response = await fetch(baseUrl + '/api/client/contracts', {
-                    headers: {
-                        'Authorization': 'Bearer ' + token,
-                        'Content-Type': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    const contracts = await response.json();
-                    
-                    if (contracts.length === 0) {
-                        document.getElementById('contractsRow').innerHTML =
-                            '<div class="col-12"><div class="alert alert-info">No contracts found</div></div>';
-                        return;
-                    }
-                    
-                    document.getElementById('contractsRow').innerHTML = contracts.map(c => `
-                        <div class="col-md-6 mb-3">
-                            <div class="card">
-                                <div class="card-header d-flex justify-content-between">
-                                    <strong>${c.contractNumber}</strong>
-                                    <span class="badge bg-${c.status === 'Active' ? 'success' : 'secondary'}">${c.status}</span>
-                                </div>
-                                <div class="card-body">
-                                    <p><strong>Start:</strong> ${new Date(c.startDate).toLocaleDateString()}</p>
-                                    <p><strong>End:</strong> ${new Date(c.endDate).toLocaleDateString()}</p>
-                                    <p><strong>Level:</strong> ${c.serviceLevel}</p>
-                                </div>
-                            </div>
-                        </div>
-                    `).join('');
-                }
-            } catch (err) {
-                console.error('Error:', err);
+<script>
+    const token = localStorage.getItem('token');
+    const role  = localStorage.getItem('role');
+
+    if (!token || role !== 'Admin') { window.location.href = '/Account/Login'; }
+
+    let currentContractId = null;
+
+    function statusBadge(s) {
+        const m = { Draft:'secondary', Active:'success', Expired:'danger', 'On Hold':'warning', OnHold:'warning' };
+        return '<span class="badge bg-' + (m[s]||'secondary') + '">' + s + '</span>';
+    }
+    function levelBadge(l) {
+        const m = { Standard:'info', Premium:'primary', Enterprise:'dark' };
+        return '<span class="badge bg-' + (m[l]||'secondary') + '">' + l + '</span>';
+    }
+
+    async function loadContracts() {
+        const body = document.getElementById('contractsBody');
+        body.innerHTML = '<tr><td colspan="8" class="text-center py-4"><div class="spinner-border text-primary"></div></td></tr>';
+        const p = new URLSearchParams();
+        const s = document.getElementById('filterStart').value;
+        const e = document.getElementById('filterEnd').value;
+        const st = document.getElementById('filterStatus').value;
+        if (s) p.append('startDate', s);
+        if (e) p.append('endDate', e);
+        if (st !== '') p.append('status', st);
+        try {
+            const res = await fetch('/api/admin/contracts?' + p, { headers: { 'Authorization': 'Bearer ' + token } });
+            if (!res.ok) { body.innerHTML = '<tr><td colspan="8" class="text-center text-danger py-4">Failed to load contracts.</td></tr>'; return; }
+            const contracts = await res.json();
+            if (!contracts.length) {
+                body.innerHTML = '<tr><td colspan="8" class="text-center text-muted py-4"><i class="fas fa-inbox fa-2x d-block mb-2"></i>No contracts found.</td></tr>';
+                return;
             }
+            body.innerHTML = contracts.map(c => '<tr>' +
+                '<td><strong>' + c.contractNumber + '</strong></td>' +
+                '<td>' + (c.clientName || '<span class="text-muted">—</span>') + '</td>' +
+                '<td>' + new Date(c.startDate).toLocaleDateString() + '</td>' +
+                '<td>' + new Date(c.endDate).toLocaleDateString() + '</td>' +
+                '<td>' + levelBadge(c.serviceLevel) + '</td>' +
+                '<td>' + statusBadge(c.status) + '</td>' +
+                '<td>' + (c.hasAgreement ? '<a href="/api/admin/contracts/' + c.contractId + '/download" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fas fa-download"></i> PDF</a>' : '<span class="text-muted small">None</span>') + '</td>' +
+                '<td><button class="btn btn-sm btn-outline-secondary" onclick="openStatusModal(' + c.contractId + ',\'' + c.contractNumber + '\',\'' + c.status + '\')"><i class="fas fa-exchange-alt"></i> Status</button></td>' +
+                '</tr>').join('');
+        } catch { body.innerHTML = '<tr><td colspan="8" class="text-center text-danger py-4">Network error loading contracts.</td></tr>'; }
+    }
+
+    async function loadClients() {
+        const sel = document.getElementById('clientSelect');
+        sel.innerHTML = '<option value="">Loading clients...</option>';
+        try {
+            const res = await fetch('/api/admin/clients', { headers: { 'Authorization': 'Bearer ' + token } });
+            if (!res.ok) throw new Error();
+            const clients = await res.json();
+            sel.innerHTML = clients.length
+                ? '<option value="">— Select a client —</option>' + clients.map(c => '<option value="' + c.id + '">' + c.fullName + ' (' + c.email + ')</option>').join('')
+                : '<option value="">No clients registered yet</option>';
+        } catch { sel.innerHTML = '<option value="">Failed to load clients</option>'; }
+    }
+
+    function openCreateModal() {
+        document.getElementById('clientSelect').innerHTML = '<option value="">Loading...</option>';
+        document.getElementById('cStartDate').value = new Date().toISOString().split('T')[0];
+        document.getElementById('cEndDate').value = '';
+        document.getElementById('cServiceLevel').value = '0';
+        document.getElementById('cAgreement').value = '';
+        document.getElementById('createAlert').innerHTML = '';
+        const btn = document.getElementById('createBtn');
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-save me-2"></i>Create Contract';
+        loadClients();
+        new bootstrap.Modal(document.getElementById('createModal')).show();
+    }
+
+    async function submitCreate() {
+        const alertEl = document.getElementById('createAlert');
+        alertEl.innerHTML = '';
+        const clientId = document.getElementById('clientSelect').value;
+        const startDate = document.getElementById('cStartDate').value;
+        const endDate = document.getElementById('cEndDate').value;
+        const serviceLevel = document.getElementById('cServiceLevel').value;
+        const agreementFile = document.getElementById('cAgreement').files[0];
+
+        if (!clientId) { alertEl.innerHTML = '<div class="alert alert-danger">Please select a client.</div>'; return; }
+        if (!startDate || !endDate) { alertEl.innerHTML = '<div class="alert alert-danger">Please fill in both dates.</div>'; return; }
+        if (new Date(endDate) <= new Date(startDate)) { alertEl.innerHTML = '<div class="alert alert-danger">End date must be after start date.</div>'; return; }
+
+        const btn = document.getElementById('createBtn');
+        btn.disabled = true;
+        btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Creating...';
+
+        try {
+            const fd = new FormData();
+            fd.append('ClientId', clientId);
+            fd.append('StartDate', startDate);
+            fd.append('EndDate', endDate);
+            fd.append('ServiceLevel', serviceLevel);
+            if (agreementFile) fd.append('Agreement', agreementFile);
+
+            const res = await fetch('/api/admin/contracts', {
+                method: 'POST',
+                headers: { 'Authorization': 'Bearer ' + token },
+                body: fd
+            });
+            const data = await res.json();
+            if (res.ok) {
+                bootstrap.Modal.getInstance(document.getElementById('createModal')).hide();
+                showAlert('success', '<i class="fas fa-check-circle me-2"></i>Contract <strong>' + data.contractNumber + '</strong> created successfully!');
+                loadContracts();
+            } else {
+                alertEl.innerHTML = '<div class="alert alert-danger">' + (data.message || data.title || 'Failed to create contract.') + '</div>';
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-save me-2"></i>Create Contract';
+            }
+        } catch {
+            alertEl.innerHTML = '<div class="alert alert-danger">Network error. Please try again.</div>';
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-save me-2"></i>Create Contract';
         }
-        
-        loadContracts();
-    </script>
+    }
+
+    const statusValueMap = { Draft:'0', Active:'1', Expired:'2', OnHold:'3', 'On Hold':'3' };
+    function openStatusModal(id, number, currentStatus) {
+        currentContractId = id;
+        document.getElementById('statusContractNumber').textContent = number;
+        document.getElementById('newStatus').value = statusValueMap[currentStatus] || '0';
+        new bootstrap.Modal(document.getElementById('statusModal')).show();
+    }
+
+    async function submitStatusChange() {
+        if (!currentContractId) return;
+        try {
+            const res = await fetch('/api/admin/contracts/' + currentContractId + '/status', {
+                method: 'PUT',
+                headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' },
+                body: JSON.stringify({ status: parseInt(document.getElementById('newStatus').value) })
+            });
+            const data = await res.json();
+            bootstrap.Modal.getInstance(document.getElementById('statusModal')).hide();
+            showAlert(res.ok ? 'success' : 'danger', data.message || (res.ok ? 'Status updated.' : 'Failed to update status.'));
+            if (res.ok) loadContracts();
+        } catch { showAlert('danger', 'Network error updating status.'); }
+    }
+
+    function showAlert(type, html) {
+        const el = document.getElementById('alertArea');
+        el.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible fade show">' + html + '<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>';
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    loadContracts();
+</script>
 }

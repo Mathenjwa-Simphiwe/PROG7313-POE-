@@ -27,6 +27,16 @@
   },
   {
     "ContainingType": "PROGPOE.Controllers.ApiAdminController",
+    "Method": "GetClients",
+    "RelativePath": "api/admin/clients",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PROGPOE.Controllers.ApiAdminController",
     "Method": "GetContracts",
     "RelativePath": "api/admin/contracts",
     "HttpMethod": "GET",

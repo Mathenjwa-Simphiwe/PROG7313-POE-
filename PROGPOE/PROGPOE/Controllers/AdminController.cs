@@ -166,6 +166,15 @@ namespace PROGPOE.Controllers
             return File(stream, "application/pdf", $"Contract_{contract.ContractNumber}.pdf");
         }
 
+        [HttpGet("clients")]
+        public async Task<IActionResult> GetClients()
+        {
+            var clients = await _db.Clients
+                .Select(c => new { c.Id, c.FullName, c.Email, c.Region })
+                .ToListAsync();
+            return Ok(clients);
+        }
+
         [HttpGet("currency/rate")]
         public IActionResult GetExchangeRate([FromQuery] string from = "USD", [FromQuery] string to = "EUR")
         {
