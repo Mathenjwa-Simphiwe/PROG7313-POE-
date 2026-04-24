@@ -3,12 +3,38 @@
   "WorkspaceRootPath": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\views\\client\\clientcontracts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\views\\client\\clientcontracts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\views\\client\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\views\\client\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lab_services_student\\AppData\\Local\\Temp\\98a8afed-6585-4b4c-820c-528ef8ec7f1b_PROGPOE_fixed_1.zip.PROGPOE_fixed_1.zip\\Views\\Client\\Dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\controllers\\mvcclientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\controllers\\mvcclientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\controllers\\mvcadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\controllers\\mvcadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lab_services_student\\AppData\\Local\\Temp\\b1a7695f-af5d-4255-b783-d90aefdae99c_PROGPOE_fixed.zip.PROGPOE_fixed.zip\\Controllers\\MvcClientController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\controllers\\mvcaccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,16 +61,8 @@
       "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\views\\client\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\views\\client\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -53,10 +71,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\views\\admin\\contracts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\views\\admin\\contracts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\views\\client\\clientcontracts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|solutionrelative:progpoe\\views\\client\\clientcontracts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AA77A8AF-4F79-18DD-5E9B-DE5E8F867568}|PROGPOE\\PROGPOE.csproj|c:\\users\\lab_services_student\\documents\\github\\prog7313-poe-\\progpoe\\progpoe\\views\\client\\requests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -178,37 +192,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "PROGPOE\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "PROGPOE\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAmwBkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T22:23:02.66Z",
-              "EditorCaption": ""
+              "DocumentIndex": 4,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\AppData\\Local\\Temp\\98a8afed-6585-4b4c-820c-528ef8ec7f1b_PROGPOE_fixed_1.zip.PROGPOE_fixed_1.zip\\Views\\Client\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\98a8afed-6585-4b4c-820c-528ef8ec7f1b_PROGPOE_fixed_1.zip.PROGPOE_fixed_1.zip\\Views\\Client\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\lab_services_student\\AppData\\Local\\Temp\\98a8afed-6585-4b4c-820c-528ef8ec7f1b_PROGPOE_fixed_1.zip.PROGPOE_fixed_1.zip\\Views\\Client\\Dashboard.cshtml [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\98a8afed-6585-4b4c-820c-528ef8ec7f1b_PROGPOE_fixed_1.zip.PROGPOE_fixed_1.zip\\Views\\Client\\Dashboard.cshtml [Read Only]",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAGgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-24T23:27:11.138Z",
+              "EditorCaption": " [Read Only]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "PROGPOE\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "PROGPOE\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAuwCgAAAABAAAAAAAAAA==",
+              "Title": "MvcClientController.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\MvcClientController.cs",
+              "RelativeDocumentMoniker": "PROGPOE\\Controllers\\MvcClientController.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\MvcClientController.cs",
+              "RelativeToolTip": "PROGPOE\\Controllers\\MvcClientController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T15:22:55.298Z",
+              "WhenOpened": "2026-04-24T23:26:47.019Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Controllers\\AdminController.cs",
@@ -216,25 +230,100 @@
               "RelativeToolTip": "PROGPOE\\Controllers\\AdminController.cs",
               "ViewState": "AgIAALsAAAAAAAAAAAA5wMoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T15:23:22.327Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T15:23:22.327Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "ClientController.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\ClientController.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Controllers\\ClientController.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\ClientController.cs",
               "RelativeToolTip": "PROGPOE\\Controllers\\ClientController.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAAAEIAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAqwEIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-23T15:23:42.365Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "PROGPOE\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "PROGPOE\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAAAF8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-23T16:04:16.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClientContracts.cshtml",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Client\\ClientContracts.cshtml",
+              "RelativeDocumentMoniker": "PROGPOE\\Views\\Client\\ClientContracts.cshtml",
+              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Client\\ClientContracts.cshtml",
+              "RelativeToolTip": "PROGPOE\\Views\\Client\\ClientContracts.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-23T16:22:02.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "PROGPOE\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "PROGPOE\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-24T23:29:49.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "PROGPOE\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "PROGPOE\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAuwCgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-23T15:22:55.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Client\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "PROGPOE\\Views\\Client\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Client\\Dashboard.cshtml",
+              "RelativeToolTip": "PROGPOE\\Views\\Client\\Dashboard.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAACYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-23T16:21:21.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "PROGPOE\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "PROGPOE\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAmwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-23T22:23:02.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "MvcAccountController.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\MvcAccountController.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Controllers\\MvcAccountController.cs",
@@ -242,12 +331,11 @@
               "RelativeToolTip": "PROGPOE\\Controllers\\MvcAccountController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T15:24:24.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T15:24:24.535Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "MvcAdminController.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Controllers\\MvcAdminController.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Controllers\\MvcAdminController.cs",
@@ -260,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "PROGPOE\\Properties\\launchSettings.json",
@@ -268,25 +356,11 @@
               "RelativeToolTip": "PROGPOE\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-23T22:07:38.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T22:07:38.92Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Client\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "PROGPOE\\Views\\Client\\Dashboard.cshtml",
-              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Client\\Dashboard.cshtml",
-              "RelativeToolTip": "PROGPOE\\Views\\Client\\Dashboard.cshtml",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAYwGoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-23T16:21:21.323Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "PROGPOE\\Views\\Account\\Login.cshtml",
@@ -294,25 +368,11 @@
               "RelativeToolTip": "PROGPOE\\Views\\Account\\Login.cshtml",
               "ViewState": "AgIAAEYAAAAAAAAAAAAwwFwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-23T16:19:14.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T16:19:14.084Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "PROGPOE\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "PROGPOE\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAYwF8AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-23T16:04:16.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Program.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Program.cs",
@@ -320,12 +380,11 @@
               "RelativeToolTip": "PROGPOE\\Program.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T17:20:16.101Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T17:20:16.101Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Admin\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "PROGPOE\\Views\\Admin\\Dashboard.cshtml",
@@ -333,12 +392,11 @@
               "RelativeToolTip": "PROGPOE\\Views\\Admin\\Dashboard.cshtml",
               "ViewState": "AgIAAE4AAAAAAAAAAAAYwGIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-23T16:19:47.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T16:19:47.863Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "Contracts.cshtml",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Admin\\Contracts.cshtml",
               "RelativeDocumentMoniker": "PROGPOE\\Views\\Admin\\Contracts.cshtml",
@@ -346,25 +404,11 @@
               "RelativeToolTip": "PROGPOE\\Views\\Admin\\Contracts.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAJwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-23T16:20:25.127Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T16:20:25.127Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ClientContracts.cshtml",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Client\\ClientContracts.cshtml",
-              "RelativeDocumentMoniker": "PROGPOE\\Views\\Client\\ClientContracts.cshtml",
-              "ToolTip": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Client\\ClientContracts.cshtml",
-              "RelativeToolTip": "PROGPOE\\Views\\Client\\ClientContracts.cshtml",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAAGEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-23T16:22:02.661Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "Requests.cshtml",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Client\\Requests.cshtml",
               "RelativeDocumentMoniker": "PROGPOE\\Views\\Client\\Requests.cshtml",
@@ -372,12 +416,11 @@
               "RelativeToolTip": "PROGPOE\\Views\\Client\\Requests.cshtml",
               "ViewState": "AgIAAB8AAAAAAAAAAAAAADkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-23T16:22:33.945Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T16:22:33.945Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "PROGPOE.csproj",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\PROGPOE.csproj",
               "RelativeDocumentMoniker": "PROGPOE\\PROGPOE.csproj",
@@ -385,12 +428,11 @@
               "RelativeToolTip": "PROGPOE\\PROGPOE.csproj",
               "ViewState": "AgIAABQAAAAAQbrHrGIvwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-23T17:42:34.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T17:42:34.084Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "AppDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Migrations\\AppDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Migrations\\AppDbContextModelSnapshot.cs",
@@ -402,7 +444,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "InitialCreate.sql",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Migrations\\InitialCreate.sql",
               "RelativeDocumentMoniker": "PROGPOE\\Migrations\\InitialCreate.sql",
@@ -413,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "CurrencyConverterTest.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Tests\\CurrencyConverterTest.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Tests\\CurrencyConverterTest.cs",
@@ -425,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "FileValidationTest.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Tests\\FileValidationTest.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Tests\\FileValidationTest.cs",
@@ -437,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "AppDbContextFactory.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Data\\AppDbContextFactory.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Data\\AppDbContextFactory.cs",
@@ -449,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "20260423182518_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Migrations\\20260423182518_InitialCreate.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Migrations\\20260423182518_InitialCreate.cs",
@@ -461,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Data\\AppDbContext.cs",
@@ -473,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\appsettings.json",
               "RelativeDocumentMoniker": "PROGPOE\\appsettings.json",
@@ -485,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "PROGPOE\\Views\\Home\\Index.cshtml",
@@ -497,7 +539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "ServiceRequests.cshtml",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Views\\Admin\\ServiceRequests.cshtml",
               "RelativeDocumentMoniker": "PROGPOE\\Views\\Admin\\ServiceRequests.cshtml",
@@ -509,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "FreightRequestFactory.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Factory\\FreightRequestFactory.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Factory\\FreightRequestFactory.cs",
@@ -521,7 +563,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "Maintenance.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Factory\\Maintenance.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Factory\\Maintenance.cs",
@@ -533,7 +575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "ContractService.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Services\\ContractService.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Services\\ContractService.cs",
@@ -545,7 +587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "FileStorageService.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Services\\FileStorageService.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Services\\FileStorageService.cs",
@@ -557,7 +599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "EmailObserver.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Services\\EmailObserver.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Services\\EmailObserver.cs",
@@ -569,7 +611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "Billing.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Services\\Billing.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Services\\Billing.cs",
@@ -581,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "CurrencyObserver.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Services\\CurrencyObserver.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Services\\CurrencyObserver.cs",
@@ -593,7 +635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "IServiceRequestFactory.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Interfaces\\IServiceRequestFactory.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Interfaces\\IServiceRequestFactory.cs",
@@ -605,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "ICurrencyConverter.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Interfaces\\ICurrencyConverter.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Interfaces\\ICurrencyConverter.cs",
@@ -617,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "IContractObserver.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Interfaces\\IContractObserver.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Interfaces\\IContractObserver.cs",
@@ -629,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "MaintenanceRequest.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Models\\MaintenanceRequest.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Models\\MaintenanceRequest.cs",
@@ -641,7 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 41,
               "Title": "FreightRequest.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Models\\FreightRequest.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Models\\FreightRequest.cs",
@@ -653,7 +695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 42,
               "Title": "ServiceRequest.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Models\\ServiceRequest.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Models\\ServiceRequest.cs",
@@ -665,7 +707,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 43,
               "Title": "Contract.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Models\\Contract.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Models\\Contract.cs",
@@ -677,7 +719,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 44,
               "Title": "Admin.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Models\\Admin.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Models\\Admin.cs",
@@ -689,7 +731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 45,
               "Title": "Client.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\Models\\Client.cs",
               "RelativeDocumentMoniker": "PROGPOE\\Models\\Client.cs",
@@ -698,6 +740,40 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-23T15:11:57.132Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "352acbbe-6c42-43a8-96a7-b9e1deacd0e3",
+        "Display": 0,
+        "X": 192,
+        "Y": 121,
+        "Width": 1152,
+        "Height": 475,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MvcClientController.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\AppData\\Local\\Temp\\b1a7695f-af5d-4255-b783-d90aefdae99c_PROGPOE_fixed.zip.PROGPOE_fixed.zip\\Controllers\\MvcClientController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\b1a7695f-af5d-4255-b783-d90aefdae99c_PROGPOE_fixed.zip.PROGPOE_fixed.zip\\Controllers\\MvcClientController.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\AppData\\Local\\Temp\\b1a7695f-af5d-4255-b783-d90aefdae99c_PROGPOE_fixed.zip.PROGPOE_fixed.zip\\Controllers\\MvcClientController.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\b1a7695f-af5d-4255-b783-d90aefdae99c_PROGPOE_fixed.zip.PROGPOE_fixed.zip\\Controllers\\MvcClientController.cs [Read Only]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T23:24:04.403Z",
+              "EditorCaption": " [Read Only]"
             }
           ]
         }

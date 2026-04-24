@@ -312,3 +312,4 @@ C:\Users\lab_services_student\Documents\GitHub\PROG7313-POE-\PROGPOE\PROGPOE\obj
 C:\Users\lab_services_student\Documents\GitHub\PROG7313-POE-\PROGPOE\PROGPOE\obj\Debug\net10.0\PROGPOE.pdb
 C:\Users\lab_services_student\Documents\GitHub\PROG7313-POE-\PROGPOE\PROGPOE\obj\Debug\net10.0\PROGPOE.genruntimeconfig.cache
 C:\Users\lab_services_student\Documents\GitHub\PROG7313-POE-\PROGPOE\PROGPOE\obj\Debug\net10.0\ref\PROGPOE.dll
+C:\Users\lab_services_student\Documents\GitHub\PROG7313-POE-\PROGPOE\PROGPOE\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
