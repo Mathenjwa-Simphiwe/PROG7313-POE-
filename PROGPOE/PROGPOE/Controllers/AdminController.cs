@@ -61,12 +61,19 @@ namespace PROGPOE.Controllers
         [HttpPost("contracts")]
         public async Task<IActionResult> CreateContract([FromForm] CreateContractRequest request)
         {
+            if (!DateTime.TryParse(request.StartDate, out var startDate))
+                return BadRequest(new { Message = "Invalid start date format." });
+            if (!DateTime.TryParse(request.EndDate, out var endDate))
+                return BadRequest(new { Message = "Invalid end date format." });
+            if (endDate <= startDate)
+                return BadRequest(new { Message = "End date must be after start date." });
+
             var contract = new Contract
             {
                 ClientId = request.ClientId,
-                StartDate = request.StartDate,
-                EndDate = request.EndDate,
-                ServiceLevel = request.ServiceLevel
+                StartDate = startDate,
+                EndDate = endDate,
+                ServiceLevel = (ServiceLevel)request.ServiceLevel
             };
 
             var created = await _cs.CreateAsync(contract);
@@ -194,9 +201,9 @@ namespace PROGPOE.Controllers
     public class CreateContractRequest
     {
         public string ClientId { get; set; } = string.Empty;
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public ServiceLevel ServiceLevel { get; set; }
+        public string StartDate { get; set; } = string.Empty;
+        public string EndDate { get; set; } = string.Empty;
+        public int ServiceLevel { get; set; }
         public IFormFile? Agreement { get; set; }
     }
 

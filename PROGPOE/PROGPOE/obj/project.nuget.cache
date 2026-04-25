@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ogG/oa4qHP4=",
+  "dgSpecHash": "xgQ4KtqCzZI=",
   "success": true,
   "projectFilePath": "C:\\Users\\lab_services_student\\Documents\\GitHub\\PROG7313-POE-\\PROGPOE\\PROGPOE\\PROGPOE.csproj",
   "expectedPackageFiles": [
@@ -71,7 +71,8 @@
     "C:\\Users\\lab_services_student\\.nuget\\packages\\xunit.assert\\2.9.3\\xunit.assert.2.9.3.nupkg.sha512",
     "C:\\Users\\lab_services_student\\.nuget\\packages\\xunit.core\\2.9.3\\xunit.core.2.9.3.nupkg.sha512",
     "C:\\Users\\lab_services_student\\.nuget\\packages\\xunit.extensibility.core\\2.9.3\\xunit.extensibility.core.2.9.3.nupkg.sha512",
-    "C:\\Users\\lab_services_student\\.nuget\\packages\\xunit.extensibility.execution\\2.9.3\\xunit.extensibility.execution.2.9.3.nupkg.sha512"
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\xunit.extensibility.execution\\2.9.3\\xunit.extensibility.execution.2.9.3.nupkg.sha512",
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\xunit.runner.visualstudio\\2.8.2\\xunit.runner.visualstudio.2.8.2.nupkg.sha512"
   ],
   "logs": []
 }

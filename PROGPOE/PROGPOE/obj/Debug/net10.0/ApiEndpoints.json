@@ -76,17 +76,17 @@
       },
       {
         "Name": "StartDate",
-        "Type": "System.DateTime",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
         "Name": "EndDate",
-        "Type": "System.DateTime",
+        "Type": "System.String",
         "IsRequired": false
       },
       {
         "Name": "ServiceLevel",
-        "Type": "PROGPOE.Models.ServiceLevel",
+        "Type": "System.Int32",
         "IsRequired": false
       },
       {
