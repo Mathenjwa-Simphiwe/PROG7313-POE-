@@ -65,6 +65,8 @@ builder.Services.AddAuthentication(options =>
 
 // SERVICES
 builder.Services.AddScoped<CurrencyConverter>();
+// ExchangeRateService uses HttpClient to call open.er-api.com for live USD/ZAR rates
+builder.Services.AddHttpClient<ExchangeRateService>();
 builder.Services.AddScoped<Billing>();
 builder.Services.AddScoped<EmailObserver>();
 builder.Services.AddScoped<FileStorageService>();

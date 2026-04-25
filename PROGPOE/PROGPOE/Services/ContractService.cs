@@ -7,15 +7,30 @@ namespace PROGPOE.Services
     public class ContractService
     {
         private readonly AppDbContext _db;
-        public ContractService(AppDbContext db, Billing b, EmailObserver e) => _db = db;
+        private readonly Billing _billing;
+        private readonly EmailObserver _email;
 
-        public async Task<Contract> CreateAsync(Contract c)
+        // Both observers are injected so the Observer Pattern is fully wired:
+        // when a contract changes status, Billing and EmailObserver are notified.
+        public ContractService(AppDbContext db, Billing billing, EmailObserver email)
         {
-            c.ContractNumber = $"CT-{DateTime.Now:yyyyMMdd}-{Random.Shared.Next(1000, 9999)}";
-            c.Status = ContractStatus.Draft;
-            _db.Contracts.Add(c);
+            _db      = db;
+            _billing = billing;
+            _email   = email;
+        }
+
+        public async Task<Contract> CreateAsync(Contract contract)
+        {
+            contract.ContractNumber = $"CT-{DateTime.Now:yyyyMMdd}-{Random.Shared.Next(1000, 9999)}";
+            contract.Status = ContractStatus.Draft;
+
+            // Attach both observers BEFORE saving so any status change during creation notifies them
+            contract.AttachObserver(_billing);
+            contract.AttachObserver(_email);
+
+            _db.Contracts.Add(contract);
             await _db.SaveChangesAsync();
-            return c;
+            return contract;
         }
 
         public async Task<List<Contract>> SearchAsync(DateTime? sd, DateTime? ed, ContractStatus? st)

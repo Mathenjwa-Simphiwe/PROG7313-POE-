@@ -366,6 +366,12 @@ namespace PROGPOE.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<decimal?>("ExchangeRateUsed")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<decimal?>("LocalCostZar")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Origin")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -384,6 +390,9 @@ namespace PROGPOE.Migrations
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
+
+                    b.Property<decimal?>("UsdAmount")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("ServiceRequestId");
 

@@ -245,6 +245,16 @@
   },
   {
     "ContainingType": "PROGPOE.Controllers.ApiClientController",
+    "Method": "GetRate",
+    "RelativePath": "api/client/currency/rate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PROGPOE.Controllers.ApiClientController",
     "Method": "Dashboard",
     "RelativePath": "api/client/dashboard",
     "HttpMethod": "GET",

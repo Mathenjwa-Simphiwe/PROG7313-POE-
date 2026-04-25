@@ -15,8 +15,10 @@ namespace PROGPOE.Controllers
         private readonly AppDbContext _db;
         private readonly ContractService _cs;
         private readonly FileStorageService _fs;
+        private readonly Billing _billing;
+        private readonly EmailObserver _email;
 
-        public ApiAdminController(AppDbContext db, ContractService cs, FileStorageService fs)
+        public ApiAdminController(AppDbContext db, ContractService cs, FileStorageService fs, Billing billing, EmailObserver email)
         {
             _db = db;
             _cs = cs;
@@ -108,25 +110,35 @@ namespace PROGPOE.Controllers
         [HttpGet("service-requests")]
         public async Task<IActionResult> GetServiceRequests()
         {
+            // FIX: EF Core cannot project an abstract TPH entity directly in a .Select() —
+            // it conflicts with the discriminator column sharing the name "RequestType".
+            // Solution: load the entities into memory first (with includes), then project in C#.
             var requests = await _db.ServiceRequests
                 .Include(r => r.Contract)
-                .ThenInclude(c => c!.Client)
+                    .ThenInclude(c => c!.Client)
                 .OrderByDescending(r => r.RequestDate)
-                .Select(r => new
-                {
-                    r.ServiceRequestId,
-                    r.RequestId,
-                    Type = r.RequestType.ToString(),
-                    r.Origin,
-                    r.Description,
-                    r.Cost,
-                    Status = r.Status.ToString(),
-                    ContractNumber = r.Contract!.ContractNumber,
-                    ClientName = r.Contract.Client!.FullName
-                })
-                .ToListAsync();
+                .ToListAsync();  // materialise first, THEN project below
 
-            return Ok(requests);
+            var result = requests.Select(r => new
+            {
+                r.ServiceRequestId,
+                r.RequestId,
+                Type = r.RequestType.ToString(),
+                r.Origin,
+                r.Description,
+                r.Cost,
+                r.UsdAmount,
+                r.LocalCostZar,
+                r.ExchangeRateUsed,
+                Status = r.Status.ToString(),
+                ContractNumber = r.Contract?.ContractNumber,
+                ClientName = r.Contract?.Client?.FullName,
+                r.AdminNotes,
+                r.RequestDate,
+                r.DecisionDate
+            });
+
+            return Ok(result);
         }
 
         [HttpPut("service-requests/{id}/approve")]
@@ -186,7 +198,6 @@ namespace PROGPOE.Controllers
         public IActionResult GetExchangeRate([FromQuery] string from = "USD", [FromQuery] string to = "EUR")
         {
             var converter = new CurrencyConverter();
-
             return Ok(new
             {
                 From = from,
